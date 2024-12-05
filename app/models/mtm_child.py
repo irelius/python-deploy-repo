@@ -1,4 +1,4 @@
-from .db import db, environment, SCHEMA
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 class MTM_Child(db.Model):
     __tablename__ = 'mtm_children'
