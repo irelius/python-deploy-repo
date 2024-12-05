@@ -13,8 +13,8 @@ def seed_parent_a():
 
 def undo_parent_a():
     if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.parent_as RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.parent_a RESTART IDENTITY CASCADE;")
     else:
-        db.session.execute("DELETE FROM parent_as")
+        db.session.execute("DELETE FROM parent_a")
 
     db.session.commit()

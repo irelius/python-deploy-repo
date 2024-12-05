@@ -3,7 +3,7 @@ from .db import db, environment, SCHEMA
 # One-to-Many from Parent_B to Child_B. Bi-directional
 
 class Child_B(db.Model):
-    __tablename__ = 'child_bs'
+    __tablename__ = 'child_b'
     
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
@@ -11,7 +11,7 @@ class Child_B(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     child_b = db.Column(db.String(100), nullable=False)
     
-    parent_b_id = db.Column(db.Integer, db.ForeignKey("parent_bs.id"))
+    parent_b_id = db.Column(db.Integer, db.ForeignKey("parent_b.id"))
     parent_b = db.relationship("Parent_B", back_populates="child_b")
     
     def to_dict(self):

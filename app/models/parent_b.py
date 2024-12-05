@@ -1,7 +1,7 @@
 from .db import db, environment, SCHEMA
 
 class Parent_B(db.Model):
-    __tablename__ = 'parent_bs'
+    __tablename__ = 'parent_b'
     
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}

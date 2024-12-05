@@ -3,7 +3,7 @@ from .db import db, environment, SCHEMA
 # One-to-Many from Parent_A to Child_A. One direction
 
 class Parent_A(db.Model):
-    __tablename__ = 'parent_as'
+    __tablename__ = 'parent_a'
     
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
