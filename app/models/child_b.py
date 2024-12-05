@@ -1,9 +1,12 @@
-from .db import db
+from .db import db, environment, SCHEMA
 
 # One-to-Many from Parent_B to Child_B. Bi-directional
 
 class Child_B(db.Model):
     __tablename__ = 'child_bs'
+    
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
     child_b = db.Column(db.String(100), nullable=False)

@@ -1,8 +1,11 @@
-from .db import db
+from .db import db, environment, SCHEMA
 
 # Join table for MTM_Parent and MTM_Child
 class MTM_Parent_Child(db.Model):
     __tablename__ = 'mtm_parent_children'
+    
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
     mtm_extra_data = db.Column(db.String(150), nullable=False)

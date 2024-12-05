@@ -1,7 +1,10 @@
-from .db import db
+from .db import db, environment, SCHEMA
 
 class MTM_Child(db.Model):
     __tablename__ = 'mtm_children'
+    
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
     mtm_child_col = db.Column(db.String(100), nullable=False)

@@ -1,7 +1,10 @@
-from .db import db
+from .db import db, environment, SCHEMA
 
 class Parent_B(db.Model):
     __tablename__ = 'parent_bs'
+    
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
     parent_b = db.Column(db.String(100), nullable=False)
