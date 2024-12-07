@@ -23,9 +23,14 @@ This is a repo for testing purposes. Testing deployment via Render using a Docke
 - Start command: `gunicorn app:app`
 
 
+# Deployment via Dockerfile:
+
 
 ## Notes:
 - "psycopg2-binary" was added to Pipfile, version "2.9.10". Probably not needed. idk why i added it
 - Development python version is 3.9.4
 - Development pip version is 24.3.1
 - Development pyenv version is 2.4.20
+
+
+
