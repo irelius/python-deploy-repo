@@ -92,7 +92,6 @@ def run_migrations_online():
         )
         # Create a schema (only in production)
         if environment == "production":
-            print('booba if conditional')
             connection.execute(f"CREATE SCHEMA IF NOT EXISTS {SCHEMA}")
 
         # Set search path to your schema (only in production)
