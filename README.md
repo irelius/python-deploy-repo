@@ -18,8 +18,9 @@ This is a repo for testing purposes. Testing deployment via Render using a Docke
         - Something short, concise, and descriptive of the project
     - `SECRET_KEY`
         - A random string of characters. Do not share. It's a secret
-- Build command: `pip install -r requirements.txt && pip install psycopg2 && flask db upgrade && flask seed all`
-    - Kinda weird that "flask db migrate" isn't included in the build command. Not really sure why it breaks when I add it ¯\\_(ツ)\_/¯
+- Build command: `pip install -r requirements.txt && pip install psycopg2 && flask db upgrade && flask seed undo && flask seed all`
+    - Install the packages first, then unseed/downgrade so push doesn't break with unique properties on columns
+    <!-- - Kinda weird that "flask db migrate" isn't included in the build command. Not really sure why it breaks when I add it ¯\\_(ツ)\_/¯ -->
 - Start command: `gunicorn app:app`
 
 
