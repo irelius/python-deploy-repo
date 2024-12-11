@@ -20,16 +20,16 @@ seed_commands = AppGroup('seed')
 @seed_commands.command('all')
 def seed():
     if environment == 'production':
-        undo_users()
-
-        undo_parent_a()
-        undo_child_a()
-        undo_parent_b()
-        undo_child_b()
-        
-        undo_mtm_parent()
-        undo_mtm_child()
         undo_mtm_parent_child()
+        undo_mtm_child()
+        undo_mtm_parent()
+        
+        undo_child_b()
+        undo_parent_b()
+        undo_child_a()
+        undo_parent_a()
+        
+        undo_users()
     seed_users()
     
     seed_parent_a()
@@ -46,14 +46,14 @@ def seed():
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
 def undo():
-    undo_users()
-    
-    undo_parent_a()
-    undo_child_a()
-    undo_parent_b()
-    undo_child_b()
-    
-    undo_mtm_parent()
-    undo_mtm_child()
     undo_mtm_parent_child()
+    undo_mtm_child()
+    undo_mtm_parent()
+    
+    undo_child_b()
+    undo_parent_b()
+    undo_child_a()
+    undo_parent_a()
+    
+    undo_users()
     # Add other undo functions here
